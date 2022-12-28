@@ -35,10 +35,15 @@ button {
   color: white;
   background-color: rgba(0,0,0,0);
   animation: reveal 2s;
-  position: absolute;
+  position: relative;
   top: 65%;
-  right: 45%;
   cursor: pointer;
+  margin-inline: 10px;
+}
+
+#play {
+  position: absolute;
+  right: 45%;
 }
 
 button:active {
