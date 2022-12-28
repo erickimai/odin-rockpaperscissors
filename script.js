@@ -1,16 +1,16 @@
 let playerScore = 0;
 let computerScore = 0;
 const buttons = document.querySelectorAll('button');
-const bod = document.querySelector('body');
-const div = document.createElement('div');
-div.textContent = `Player score : ${playerScore} Computer score : ${computerScore}`;
-bod.appendChild(div);
+const play = document.getElementById('play');
+const p = document.createElement('p');
+const pagecontainer = document.getElementsByClassName('page-container');
+const rules =  document.getElementById('rules');
 
-buttons.forEach((button) => {
+/*buttons.forEach((button) => {
   button.addEventListener('click', () => {
     playRound(button.id, getComputerChoice());
   });
-});
+});*/
 
 function getComputerChoice(){
   switch(Math.floor(Math.random() * 3)){
@@ -21,21 +21,6 @@ function getComputerChoice(){
     case 2:
         return 'Scissors';
   }
-}
-
-function game(){
-  for (let i = 1; i <= 5; i++){
-   	playRound(prompt('Rock, Paper or Scissors?') ,getComputerChoice());
-      console.log(`Round ${i}\nYour score: ${playerScore}\nComputer score: ${computerScore}`);
-  }
-  if (playerScore > computerScore){
-    console.log('You won the game! Congratulations!');
-  } else if (playerScore < computerScore){
-    console.log('You lost the game! Better luck next time!');
-  } else {
-    console.log('It`s a draw! Let`s play again!');
-  }
-  return;
 }
 
 function playRound(playerSelection, computerSelection) {
@@ -74,6 +59,36 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
+play.addEventListener('click', function onClick(e) {
+  document.body.style.background = 'none';
+  document.body.style.backgroundColor = 'black';
+  play.remove();
+  showRules();
+});
 
-
-
+function showRules() {
+  rules.style.cssText = 'color: white; display: inline-block; font-family: "Roboto Mono", monospace';
+  divRules= document.createElement('div');
+  divRules.innerText = 'RULES';
+  divRules.style.cssText = 'animation: reveal 0.5s; text-decoration: underline';
+  rules.appendChild(divRules);
+  ul = document.createElement('ul');
+  ul.style.cssText = "text-align: start";
+  rules.appendChild(ul);
+  li1 = document.createElement('li');
+  li1.innerText = "Rock beats Scissors"
+  li1.style.cssText = 'animation: reveal 0.6s';
+  li2 = document.createElement('li');
+  li2.innerText = "Paper beats Rock"
+  li2.style.cssText = 'animation: reveal 0.7s';
+  li3 = document.createElement('li');
+  li3.innerText = "Scissors beats Paper"
+  li3.style.cssText = 'animation: reveal 0.8s';
+  li4 = document.createElement('li');
+  li4.innerText = "First to 5 points wins"
+  li4.style.cssText = 'animation: reveal 0.9s; text-decoration: underline';
+  ul.appendChild(li1);
+  ul.appendChild(li2);
+  ul.appendChild(li3);
+  ul.appendChild(li4);
+}
