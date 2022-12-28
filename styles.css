@@ -1,0 +1,35 @@
+html {
+  background: url(imgs/rock-paper-scissors-neon-icons.png) no-repeat center center fixed;
+  background-size: cover;
+  height: 100%;
+  overflow: hidden;
+}
+
+div.page-container {
+  display: block;
+}
+
+h1.header {
+  color: rgb(255, 255, 255);
+  font-family: 'Roboto Mono', monospace;
+  font-size: 60px;
+  text-align: center;
+  font-weight: 300;
+  border: solid;
+  margin-inline: 480px;
+  margin-top: 20px;
+  word-spacing: 60px;
+  animation: reveal 2s;
+}
+
+@keyframes reveal {
+  0% {
+    transform: translate(-100%,0);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0,0);
+    opacity: 100%;
+  }
+}
+
