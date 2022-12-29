@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!-- saved from url=(0050)http://127.0.0.1:5500/rockpaperscissors/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta http-equiv="X-UA-Compatible">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock, Paper, Scissors</title>
+  <link rel="stylesheet" href="./Rock, Paper, Scissors_files/styles.css">
+  <script src="./Rock, Paper, Scissors_files/script.js" defer=""></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com/"><link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin=""><link href="./Rock, Paper, Scissors_files/css2" rel="stylesheet">
+</head>
+<body>
+	<div class="page-container" style="background: none black;">
+		<div class="page-header">
+			<h1 class="header">ROCK PAPER SCISSORS</h1>
+		</div>
+		
+		<h2 id="rules" style="color: white; display: inline-block; font-family: &quot;Roboto Mono&quot;, monospace;"><div style="animation: 0.5s ease 0s 1 normal none running reveal; text-decoration: underline;">Rules</div><ul style="text-align: start;"><li style="animation: 0.6s ease 0s 1 normal none running reveal;">Rock beats Scissors</li><li style="animation: 0.7s ease 0s 1 normal none running reveal;">Paper beats Rock</li><li style="animation: 0.8s ease 0s 1 normal none running reveal;">Scissors beats Paper</li><li style="animation: 0.9s ease 0s 1 normal none running reveal; text-decoration: underline;">First to 5 points wins</li></ul></h2>		
+	<div style="display: list-item;"><button id="Rock"></button><button id="Paper"></button><button id="Scissors"></button></div><div style="color: white; font-family: &quot;Roboto Mono&quot;, monospace; font-size: 40px; margin: 20px 0px;">Score<br>     You  1-0 Computer</div><div style="display: flex; justify-content: space-around; margin-top: 40px;"><div style="padding: 20px; border: 2px solid; color: white; font-family: &quot;Roboto Mono&quot;, monospace; font-size: 20px; margin: 20px 0px; animation: 1s ease 0s 1 normal none running reveal;">You chose Paper</div><div style="color: white; font-family: &quot;Roboto Mono&quot;, monospace; font-size: 25px; margin: 20px 0px 20px 50px; animation: 1s ease 0s 1 normal none running reveal;">You won! Paper beats Rock</div><div style="padding: 20px; border: 2px solid; color: white; font-family: &quot;Roboto Mono&quot;, monospace; font-size: 20px; margin: 20px 0px; animation: 1s ease 0s 1 normal none running reveal;">Computer chose Rock</div></div></div>
+	<div id="footer"><a href="https://github.com/erickimai"><img id="github" src="./Rock, Paper, Scissors_files/Github.png" alt="github link"></a></div>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+
+</body></html>
