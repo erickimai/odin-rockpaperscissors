@@ -27,7 +27,7 @@ function getComputerChoice(){
 
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
-    whoWon.innerText = 'Draw';
+    whoWon.innerText = 'Draw!';
   } else if (playerSelection === 'Rock') {
       if (computerSelection === 'Scissors') {
         whoWon.innerText = 'You won! Rock beats Scissors';
@@ -56,8 +56,8 @@ function playRound(playerSelection, computerSelection) {
 }
 
 play.addEventListener('click', function onClick(e) {
-  document.body.style.background = 'none';
-  document.body.style.backgroundColor = 'black';
+  pagecontainer.style.background = 'none';
+  pagecontainer.style.backgroundColor = 'black';
   play.remove();
   showRules();
   createButtons();
@@ -93,9 +93,6 @@ function showRules() {
 }
 
 function createButtons() {
-  rock.innerText = 'ROCK';
-  paper.innerText = 'PAPER';
-  scissors.innerText = 'SCISSORS'
   rock.setAttribute('id', 'Rock');
   paper.setAttribute('id', 'Paper');
   scissors.setAttribute('id', 'Scissors');
