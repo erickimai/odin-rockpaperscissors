@@ -11,6 +11,7 @@ const divChoices = document.createElement('div');
 const scoreDiv = document.createElement('div');
 const bottomDiv = document.createElement('div');
 const playerDiv = document.createElement('div');
+const whoWon = document.createElement('div');
 const computerDiv = document.createElement('div');
 
 function getComputerChoice(){
@@ -26,22 +27,29 @@ function getComputerChoice(){
 
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
+    whoWon.innerText = 'Draw';
   } else if (playerSelection === 'Rock') {
       if (computerSelection === 'Scissors') {
+        whoWon.innerText = 'You won! Rock beats Scissors';
         playerScore++;
       } else {
+        whoWon.innerText = 'You lost! Paper beats Rock';
         computerScore++;
       }
   } else if (playerSelection === 'Paper') {
       if (computerSelection === 'Rock') {
+        whoWon.innerText = 'You won! Paper beats Rock';
         playerScore++;
       } else {
+        whoWon.innerText = 'You lost! Scissors beats Paper';
         computerScore++;
       }
   } else if (playerSelection === 'Scissors') {
       if (computerSelection === 'Paper') {
+        whoWon.innerText = 'You won! Scissors beats Paper';
         playerScore++;
       } else {
+        whoWon.innerText = 'You Rock! Paper beats Scissors';
         computerScore++;
       }
   }
@@ -104,6 +112,8 @@ function createButtons() {
       playRound(button.id, computerChoice);
       showScore(0); 
       playerDiv.innerText = `You chose ${button.id}`;
+      playerDiv.style.cssText = "padding:20px; border: 2px solid; color: white; font-family: 'Roboto Mono', monospace; font-size: 20px; margin: 20px 0 20px 0; animation: reveal 1s; height = 100px";
+      computerDiv.style.cssText = "padding:20px; border: 2px solid; color: white; font-family: 'Roboto Mono', monospace; font-size: 20px; margin: 20px 0 20px 0; animation: reveal 1s; height = 100px";
       computerDiv.innerText = `Computer chose ${computerChoice}`;
     });
   });
@@ -117,10 +127,10 @@ function showScore(animate) {
     scoreDiv.style.cssText = "color: white; font-family: 'Roboto Mono', monospace; font-size: 40px; margin: 20px 0 20px 0; height = 100px";
   }
   pagecontainer.appendChild(scoreDiv);
-  playerDiv.style.cssText = "color: white; font-family: 'Roboto Mono', monospace; font-size: 20px; margin: 20px 0 20px 0; animation: reveal 1s; height = 100px";
-  computerDiv.style.cssText = "color: white; font-family: 'Roboto Mono', monospace; font-size: 20px; margin: 20px 0 20px 0; animation: reveal 1s; height = 100px";
-  bottomDiv.style.cssText = "display: flex; justify-content: space-around";
+  whoWon.style.cssText = "color: white; font-family: 'Roboto Mono', monospace; font-size: 25px; margin: 20px 0 20px 50px; animation: reveal 1s; height = 100px";
+  bottomDiv.style.cssText = "display: flex; justify-content: space-around; margin-top: 40px";
   pagecontainer.appendChild(bottomDiv);
   bottomDiv.appendChild(playerDiv);
+  bottomDiv.appendChild(whoWon);
   bottomDiv.appendChild(computerDiv);
 }
